@@ -1,5 +1,7 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const CopyWebpackPlugin = require('copy-webpack-plugin');
+const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
 const { VueLoaderPlugin } = require('vue-loader');
 
 module.exports = {
@@ -11,7 +13,11 @@ module.exports = {
     path: path.resolve(__dirname, 'dist'),
     filename: 'js/[name][contenthash].js',
     clean: true,
-    assetModuleFilename: 'img/[name][ext]'
+    // assetModuleFilename: 'img/[name][ext]'
+    assetModuleFilename: pathData => {
+      const filepath = path.dirname(pathData.filename).split('/').slice(1).join('/');
+      return `${filepath}/[name][ext]`;
+    },
   },
   devtool: 'source-map',
   devServer: {
@@ -39,6 +45,10 @@ module.exports = {
         type: 'asset/resource'
       },
       {
+        test: /\.(ttf|eot|woff2?)$/i,
+        type: 'asset/resource',
+      },
+      {
         test: /\.vue$/,
         loader: 'vue-loader'
       },
@@ -62,10 +72,33 @@ module.exports = {
   },
   plugins: [
     new VueLoaderPlugin(),
+    new ImageminWebpWebpackPlugin({
+      config: [{
+        test: /\.(jpe?g|png)/,
+        options: {
+          quality: 75
+        }
+      }],
+      overrideExtension: true,
+      detailedLogs: false,
+      silent: false,
+      strict: true
+    }),
+    new CopyWebpackPlugin({
+      patterns: [{
+        from: 'src/assets/',
+        to: 'assets/'
+      }]
+    }),
     new HtmlWebpackPlugin({
       title: 'Webpack app',
       filename: 'index.html',
-      template: 'src/index.html'
+      template: 'src/index.html',
+      minify: {
+        html5: true,
+        removeComments: true,
+        collapseWhitespace: true
+      }
     }),
   ]
 } 

@@ -1,0 +1,33 @@
+.tab__content {
+	background-color: $light;
+	padding: 20px;
+	text-align: center;
+}
+
+.tabs {
+	max-width: 400px;
+	margin: 0 auto;
+}
+
+.tabs__header {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	justify-content: space-beetween;
+}
+
+.tabs__title {
+	text-align: center;
+	padding: 10px 20px;
+	background-color: $light;
+	color: light;
+	border: 1px solid $bright;
+	border-radius: 10px 10px 0 0;
+	cursor: pointer;
+	transition: $tr;
+
+	&.selected {
+		background-color: $accent;
+	}
+}

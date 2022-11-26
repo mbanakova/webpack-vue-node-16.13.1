@@ -1,0 +1,56 @@
+*,
+*::after,
+*::before {
+	box-sizing: border-box;
+}
+
+@mixin font($size: 10px, $height: 10px, $weight: 400) {
+	font-size: $size;
+	line-height: $height;
+	font-weight: $weight;
+}
+
+html {
+	@include font();
+}
+
+body {
+	@include font(1.6rem, 2rem, 400);
+	font-family: $font;
+	background-color: $bright;
+	color: $medium;
+	min-width: 320px;
+	margin: 0 auto;
+	overflow-x: hidden;
+	overflow-y: scroll;
+
+	@media (max-width: $tablet) {
+		&.no-scroll {
+			overflow-y: hidden;
+		}
+	}
+}
+
+img {
+	max-width: 100%;
+	height: auto;
+	display: block;
+}
+
+main {
+	flex-grow: 1;
+}
+
+.container {
+	max-width: 1400px;
+	margin: 0 auto;
+	padding: 0 40px;
+
+	@media (max-width: $mobile) {
+		padding: 0 20px;
+	}
+}
+
+section {
+	min-height: 100vh;
+}

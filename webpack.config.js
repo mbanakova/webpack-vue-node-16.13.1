@@ -1,11 +1,17 @@
 const path = require('path')
 const HtmlWebpackPlugin = require('html-webpack-plugin')
+const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
 const { VueLoaderPlugin } = require('vue-loader');
 
+let mode = 'development'
+if (process.env.NODE_ENV === "production") {
+  mode = "production"
+}
+
 module.exports = {
-  mode: "development",
+  mode: mode,
   entry: {
     bundle: path.resolve(__dirname, 'src/index.js')
   },
@@ -33,13 +39,18 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.scss$/,
+        test: /\.s?css$/,
         use: [
-          'style-loader',
-          'css-loader',
-          'sass-loader',
+          MiniCssExtractPlugin.loader,
+          'css-loader', 'sass-loader',
         ]
       },
+      // {
+      //   test: /\.scss$/,
+      //   use: [
+      //     'style-loader', 
+      //   ]
+      // },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource'
@@ -56,10 +67,7 @@ module.exports = {
         test: /\.js$/,
         exclude: /node_modules/,
         use: {
-          loader: 'babel-loader',
-          options: {
-            presets: ['@babel/preset-env']
-          }
+          loader: 'babel-loader'
         }
       },
     ]
@@ -72,6 +80,7 @@ module.exports = {
   },
   plugins: [
     new VueLoaderPlugin(),
+    new MiniCssExtractPlugin(),
     new ImageminWebpWebpackPlugin({
       config: [{
         test: /\.(jpe?g|png)/,

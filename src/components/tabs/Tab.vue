@@ -17,11 +17,3 @@ export default {
 	},
 };
 </script>
-
-<style lang="scss" scoped>
-// .tab__content {
-// 	background-color: $dark;
-// 	padding: 20px;
-// 	text-align: center;
-// }
-</style>

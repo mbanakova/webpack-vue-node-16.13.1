@@ -1,9 +1,3 @@
-.tab__content {
-	background-color: $light;
-	padding: 20px;
-	text-align: center;
-}
-
 .tabs {
 	max-width: 400px;
 	margin: 0 auto;
@@ -30,4 +24,10 @@
 	&.selected {
 		background-color: $accent;
 	}
+}
+
+.tab__content {
+	background-color: $light;
+	padding: 20px;
+	text-align: center;
 }

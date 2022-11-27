@@ -2,7 +2,7 @@
 	<header class="header">
 		<div class="container header__container">
 			<nav class="nav">
-				<router-link :to="{ name: 'Index' }" class="nav__link nav__logo" v-smooth-scroll><font-awesome icon="fa-campground" /> Any logo</router-link>
+				<a class="nav__link nav__logo"><font-awesome icon="fa-campground" /> Any logo</a>
 				<ul class="nav__list" v-if="!mobile">
 					<li>
 						<a class="nav__link" href="#slider" v-smooth-scroll>Scroll to slider</a>

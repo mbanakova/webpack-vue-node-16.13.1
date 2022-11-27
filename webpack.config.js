@@ -6,12 +6,17 @@ const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
 const { VueLoaderPlugin } = require('vue-loader');
 
 let mode = 'development'
+let target = "web"
+
 if (process.env.NODE_ENV === "production") {
   mode = "production"
+  target = "browserslist"
 }
 
 module.exports = {
   mode: mode,
+  target: target,
+
   entry: {
     bundle: path.resolve(__dirname, 'src/index.js')
   },
@@ -39,18 +44,14 @@ module.exports = {
   module: {
     rules: [
       {
-        test: /\.s?css$/,
+        test: /\.s?css$/i,
         use: [
           MiniCssExtractPlugin.loader,
-          'css-loader', 'sass-loader',
+          'css-loader',
+          'postcss-loader',
+          'sass-loader',
         ]
       },
-      // {
-      //   test: /\.scss$/,
-      //   use: [
-      //     'style-loader', 
-      //   ]
-      // },
       {
         test: /\.(png|svg|jpg|jpeg|gif)$/i,
         type: 'asset/resource'

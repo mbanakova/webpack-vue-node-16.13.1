@@ -1,5 +1,5 @@
 
-import './styles/_main.scss'
+import './styles/_style.scss'
 //import './styles/style.css'
 import plant from './img/plant.png'
 

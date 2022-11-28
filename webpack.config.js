@@ -88,7 +88,7 @@ module.exports = {
       }],
       overrideExtension: true,
       detailedLogs: false,
-      silent: false,
+      silent: true,
       strict: true
     }),
     new CopyWebpackPlugin({

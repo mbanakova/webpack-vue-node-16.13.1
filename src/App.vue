@@ -30,7 +30,7 @@ export default {
 	},
 	data: function () {
 		return {
-			name: "Это песец",
+			name: "Это просто песец",
 		};
 	},
 };

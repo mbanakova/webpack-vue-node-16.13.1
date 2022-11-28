@@ -2,12 +2,11 @@
 	<TheHeader />
 	<div class="container">
 		<section id="hero">
+			<img src="./img/fish.png" alt="" width="60" />
+			<img src="./img/bear.svg" alt="" width="60" />
 			<h1>
 				{{ name }}
 			</h1>
-			<button @click="plusOne">Iterate</button>
-			<div>{{ counter }}</div>
-			<img src="./img/plant.png" width="200" />
 		</section>
 		<section id="tabs">
 			<TabsWrapper>
@@ -31,14 +30,8 @@ export default {
 	},
 	data: function () {
 		return {
-			name: "Hello 122211 World!",
-			counter: 0,
+			name: "Это песец",
 		};
-	},
-	methods: {
-		plusOne() {
-			this.counter++;
-		},
 	},
 };
 </script>

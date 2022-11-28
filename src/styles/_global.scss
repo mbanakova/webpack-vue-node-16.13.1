@@ -17,6 +17,8 @@ html {
 body {
 	@include font(1.6rem, 2rem, 400);
 	font-family: $font;
+	background: url("./../img/pesec.jpg") no-repeat 50% 20%;
+	background-size: 500px auto;
 	background-color: $bright;
 	color: $medium;
 	min-width: 320px;
@@ -35,6 +37,10 @@ img {
 	max-width: 100%;
 	height: auto;
 	display: block;
+}
+h1 {
+	text-align: center;
+	font-size: 50px;
 }
 
 main {

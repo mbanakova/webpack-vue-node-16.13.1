@@ -1,11 +1,6 @@
 
 import './styles/_style.scss'
 //import './styles/style.css'
-import plant from './img/plant.png'
-
-// const plantImg = document.getElementById('plant')
-// plantImg.src = plant
-
 
 import FontAwesome from "./assets/fontawesome";
 import VueSmoothScroll from 'vue3-smooth-scroll'

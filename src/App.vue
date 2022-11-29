@@ -3,7 +3,12 @@
 	<div class="container">
 		<section id="hero">
 			<img src="./img/fish.png" alt="" width="60" />
-			<img src="./img/bear.svg" alt="" width="60" />
+			<img src="./img/mineral.svg" alt="" width="60" />
+			<img src="./img/fire.svg" alt="" width="60" />
+			<img src="./img/stones.svg" alt="" width="60" />
+			<svg width="52" height="52" role="img" aria-label="Логотип">
+				<use xlink:href="#stones.svg"></use>
+			</svg>
 			<h1>
 				{{ name }}
 			</h1>

@@ -38,6 +38,7 @@ img {
 	height: auto;
 	display: block;
 }
+
 h1 {
 	text-align: center;
 	font-size: 50px;
@@ -59,4 +60,8 @@ main {
 
 section {
 	min-height: 100vh;
+}
+
+svg {
+	fill: currentColor;
 }

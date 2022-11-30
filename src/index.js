@@ -11,7 +11,5 @@ app.use(VueSmoothScroll, {
   offset: -30,
   updateHistory: false
 })
-
-
 app.component('font-awesome', FontAwesome)
 app.mount('#app') 

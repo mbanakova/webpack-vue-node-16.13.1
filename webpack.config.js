@@ -3,7 +3,6 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 const MiniCssExtractPlugin = require('mini-css-extract-plugin')
 const CopyWebpackPlugin = require('copy-webpack-plugin');
 const ImageminWebpWebpackPlugin = require("imagemin-webp-webpack-plugin");
-const SpriteLoaderPlugin = require('svg-sprite-loader/plugin');
 const { VueLoaderPlugin } = require('vue-loader');
 
 let mode = 'development'
@@ -54,19 +53,6 @@ module.exports = {
         type: 'asset/resource'
       },
       {
-        test: /\.svg$/,
-        use: [
-          {
-            loader: "svg-sprite-loader",
-            options: {
-              extract: true,
-              filepath: "/img"
-            },
-          },
-          "svg-transform-loader",
-          "svgo-loader"]
-      },
-      {
         test: /\.(ttf|eot|woff2?)$/i,
         type: 'asset/resource',
       },
@@ -92,7 +78,6 @@ module.exports = {
   plugins: [
     new VueLoaderPlugin(),
     new MiniCssExtractPlugin(),
-    new SpriteLoaderPlugin(),
     new ImageminWebpWebpackPlugin({
       config: [{
         test: /\.(jpe?g|png)/,

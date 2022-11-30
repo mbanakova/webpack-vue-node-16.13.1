@@ -8,6 +8,9 @@
 						<a class="nav__link" href="#slider" v-smooth-scroll>Scroll to slider</a>
 					</li>
 					<li>
+						<a class="nav__link" href="#accordion" v-smooth-scroll>Scroll to accordion</a>
+					</li>
+					<li>
 						<a class="nav__link" href="#tabs" v-smooth-scroll>Scroll to tabs</a>
 					</li>
 				</ul>

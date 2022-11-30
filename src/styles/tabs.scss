@@ -14,20 +14,19 @@
 .tabs__title {
 	text-align: center;
 	padding: 10px 20px;
-	background-color: $light;
-	color: light;
-	border: 1px solid $bright;
+	background-color: $medium;
+	color: $accent;
 	border-radius: 10px 10px 0 0;
 	cursor: pointer;
 	transition: $tr;
 
 	&.selected {
-		background-color: $accent;
+		background-color: $dark;
 	}
 }
 
 .tab__content {
-	background-color: $light;
+	border: 2px solid $medium;
 	padding: 20px;
 	text-align: center;
 }

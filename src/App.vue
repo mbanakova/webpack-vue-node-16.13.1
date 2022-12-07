@@ -2,12 +2,19 @@
 	<TheHeader />
 	<div class="container">
 		<section id="hero">
-			<h1>
-				{{ name }}
-			</h1>
+			<h1>Это просто песец</h1>
 			<img src="./img/pesec.jpg" alt="" width="400" />
 			<TheSVGSprite name="fire" />
 			<TheSVGSprite name="stones" />
+		</section>
+		<section id="slider">
+			<Carousel :navigation="true" :pagination="true" :startAutoplay="true" :timeout="6000" v-slot="{ currentSlide }">
+				<Slide v-for="(slide, index) in carouselSlides" :key="index">
+					<div v-show="currentSlide === index + 1" class="slide__info">
+						<img :src="require(`./img/${slide}.jpg`)" alt="" />
+					</div>
+				</Slide>
+			</Carousel>
 		</section>
 		<section id="accordion">
 			<TheAccordion />
@@ -28,6 +35,8 @@ import Tab from "./components/tabs/Tab.vue";
 import TabsWrapper from "./components/tabs/TabsWrapper.vue";
 import TheSVGSprite from "./components/TheSVGSprite.vue";
 import TheAccordion from "./components/accordion/TheAccordion.vue";
+import Carousel from "./components/slider/Carousel.vue";
+import Slide from "./components/slider/Slide.vue";
 
 export default {
 	components: {
@@ -36,11 +45,13 @@ export default {
 		TabsWrapper,
 		TheSVGSprite,
 		TheAccordion,
+		Carousel,
+		Slide,
 	},
-	data: function () {
-		return {
-			name: "Это просто песец",
-		};
+	setup() {
+		const carouselSlides = ["sl1", "sl2", "sl3", "sl4"];
+
+		return { carouselSlides };
 	},
 };
 </script>

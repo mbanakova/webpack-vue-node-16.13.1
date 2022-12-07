@@ -2,7 +2,7 @@
 	<header class="header">
 		<div class="container header__container">
 			<nav class="nav">
-				<a class="nav__link nav__logo"><font-awesome icon="fa-campground" /> Any logo</a>
+				<a class="nav__link nav__logo">Any logo</a>
 				<ul class="nav__list" v-if="!mobile">
 					<li>
 						<a class="nav__link" href="#slider" v-smooth-scroll>Scroll to slider</a>

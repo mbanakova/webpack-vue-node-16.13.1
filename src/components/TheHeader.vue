@@ -1,83 +1,55 @@
 <template>
 	<header class="header">
 		<div class="container header__container">
-			<nav class="nav">
-				<a class="nav__link nav__logo">Any logo</a>
-				<ul class="nav__list" v-if="!mobile">
-					<li>
-						<a class="nav__link" href="#slider" v-smooth-scroll>Scroll to slider</a>
-					</li>
-					<li>
-						<a class="nav__link" href="#accordion" v-smooth-scroll>Scroll to accordion</a>
-					</li>
-					<li>
-						<a class="nav__link" href="#tabs" v-smooth-scroll>Scroll to tabs</a>
-					</li>
-				</ul>
-
-				<div class="mobile-menu" v-if="mobile">
-					<p class="mobile-menu__title">Menu</p>
-					<button class="hamburger" @click="toggleHamburger" :class="{ 'is-active': mobileNav }">
-						<div class="bar"></div>
-					</button>
-				</div>
-
-				<transition name="mobile-nav">
-					<div class="mobile-nav" v-if="mobileNav">
-						<ul class="mobile-nav__list">
-							<li>
-								<a class="nav__link" href="#slider" v-smooth-scroll @click="toggleHamburger">Scroll to slider</a>
-							</li>
-							<li>
-								<a class="nav__link" href="#tabs" v-smooth-scroll @click="toggleHamburger">Scroll to tabs</a>
-							</li>
-						</ul>
-						<ul class="mobile-nav__contacts">
-							<li>
-								<a class="nav__link" href="#"><font-awesome icon="envelope" /> </a>
-							</li>
-							<li>
-								<a class="nav__link" href="#"><font-awesome icon="phone" /> </a>
-							</li>
-							<li>
-								<a class="nav__link" href="#"><font-awesome icon="piggy-bank" /> </a>
-							</li>
-						</ul>
-					</div>
-				</transition>
-			</nav>
+			<a class="nav__logo">Any logo</a>
+			<button v-if="mobile" class="hamburger" @click="toggleHamburger" :class="{ 'is-active': menuOpen }">
+				<div class="bar"></div>
+			</button>
+			<TheNav />
 		</div>
 	</header>
 </template>
 
 <script>
+import TheNav from "./TheNav.vue";
+import { ref, computed } from "vue";
+import { useStore } from "vuex";
+
 export default {
 	name: "TheHeader",
-	data() {
-		return {
-			mobile: null,
-			mobileNav: null,
-			windowWidth: null,
-		};
+	components: {
+		TheNav,
 	},
-	created() {
-		window.addEventListener("resize", this.checkScreen);
-		this.checkScreen();
-	},
-	methods: {
-		toggleHamburger() {
-			this.mobileNav = !this.mobileNav;
-		},
-		checkScreen() {
-			this.windowWidth = window.innerWidth;
-			if (this.windowWidth <= 767) {
-				this.mobile = true;
+	setup() {
+		const store = useStore();
+		const windowWidth = ref(null);
+		const mobile = computed(() => {
+			return store.getters.getMobileState;
+		});
+		const menuOpen = computed(() => {
+			return store.getters.getMenuState;
+		});
+
+		window.addEventListener("resize", checkScreen);
+		checkScreen();
+
+		function toggleHamburger() {
+			store.dispatch("toggleMenu");
+			if (mobile) {
+				document.querySelector("body").classList.toggle("no-scroll");
+			}
+		}
+
+		function checkScreen() {
+			windowWidth.value = window.innerWidth;
+			if (windowWidth.value <= 767) {
+				store.dispatch("isMobile");
 				return;
 			}
-			this.mobile = false;
-			this.mobileNav = false;
-			return;
-		},
+			store.dispatch("isNotMobile");
+			store.dispatch("toggleMenu");
+		}
+		return { mobile, menuOpen, windowWidth, toggleHamburger };
 	},
 };
 </script>

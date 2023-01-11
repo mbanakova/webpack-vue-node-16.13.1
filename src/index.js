@@ -1,8 +1,6 @@
 import './styles/_style.scss'
-
-// import FontAwesome from "./fontawesome";
 import VueSmoothScroll from 'vue3-smooth-scroll'
-import { createApp } from 'vue';
+import { createApp } from 'vue'; import store from './store'
 import App from './App.vue';
 const app = createApp(App)
 
@@ -11,5 +9,5 @@ app.use(VueSmoothScroll, {
   offset: -30,
   updateHistory: false
 })
-// app.component('font-awesome', FontAwesome)
+app.use(store)
 app.mount('#app') 

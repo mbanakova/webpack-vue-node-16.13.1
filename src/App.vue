@@ -1,6 +1,6 @@
 <template>
 	<TheHeader />
-	<div class="container">
+	<main class="container">
 		<section id="hero">
 			<h1>Это просто песец</h1>
 			<img src="./img/pesec.jpg" alt="" width="400" />
@@ -27,7 +27,7 @@
 				<Tab title="tab4">4</Tab>
 			</TabsWrapper>
 		</section>
-	</div>
+	</main>
 </template>
 <script>
 import TheHeader from "./components/TheHeader.vue";

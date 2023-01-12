@@ -17,6 +17,7 @@
 <script>
 import { computed } from "vue";
 import { useStore } from "vuex";
+
 export default {
 	name: "TheNav",
 	setup() {
@@ -27,11 +28,13 @@ export default {
 		const mobile = computed(() => {
 			return store.getters.getMobileState;
 		});
+		const body = document.querySelector("body");
+
 		function toggleHamburger() {
 			store.dispatch("toggleMenu");
 
 			if (mobile) {
-				document.querySelector("body").classList.toggle("no-scroll");
+				body.classList.toggle("no-scroll");
 			}
 		}
 

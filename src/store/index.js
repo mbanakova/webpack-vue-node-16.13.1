@@ -1,9 +1,11 @@
 import { createStore } from 'vuex'
+import slides from './slides'
 
 export default createStore({
   state: {
     isMobile: false,
-    menuOpen: false
+    menuOpen: false,
+    slides: "lol"
   },
   mutations: {
     toggleMenu(state) {
@@ -36,5 +38,6 @@ export default createStore({
     },
   },
   modules: {
+    slides
   }
 })

@@ -29,6 +29,7 @@ export default {
 		const menuOpen = computed(() => {
 			return store.getters.getMenuState;
 		});
+		const body = document.querySelector("body");
 
 		window.addEventListener("resize", checkScreen);
 		checkScreen();
@@ -36,7 +37,7 @@ export default {
 		function toggleHamburger() {
 			store.dispatch("toggleMenu");
 			if (mobile) {
-				document.querySelector("body").classList.toggle("no-scroll");
+				body.classList.toggle("no-scroll");
 			}
 		}
 
@@ -45,7 +46,10 @@ export default {
 			if (windowWidth.value <= 767) {
 				store.dispatch("isMobile");
 				return;
+			} else if (windowWidth.value <= 767 && menuOpen) {
+				body.classList.add("no-scroll");
 			}
+			body.classList.remove("no-scroll");
 			store.dispatch("isNotMobile");
 			store.dispatch("toggleMenu");
 		}

@@ -7,15 +7,10 @@
 			<TheSVGSprite name="fire" />
 			<TheSVGSprite name="stones" />
 		</section>
-		<section id="slider">
-			<Carousel :navigation="true" :pagination="true" :startAutoplay="true" :timeout="6000" v-slot="{ currentSlide }">
-				<Slide v-for="(slide, index) in carouselSlides" :key="index">
-					<div v-show="currentSlide === index + 1" class="slide__info">
-						<img :src="require(`./img/${slide}.jpg`)" alt="" />
-					</div>
-				</Slide>
-			</Carousel>
+		<section id="swiper">
+			<Swiper />
 		</section>
+
 		<section id="accordion">
 			<TheAccordion />
 		</section>
@@ -35,8 +30,7 @@ import Tab from "./components/tabs/Tab.vue";
 import TabsWrapper from "./components/tabs/TabsWrapper.vue";
 import TheSVGSprite from "./components/TheSVGSprite.vue";
 import TheAccordion from "./components/accordion/TheAccordion.vue";
-import Carousel from "./components/slider/Carousel.vue";
-import Slide from "./components/slider/Slide.vue";
+import Swiper from "./components/swiper/Swiper.vue";
 
 export default {
 	components: {
@@ -45,13 +39,8 @@ export default {
 		TabsWrapper,
 		TheSVGSprite,
 		TheAccordion,
-		Carousel,
-		Slide,
+		Swiper,
 	},
-	setup() {
-		const carouselSlides = ["sl1", "sl2", "sl3", "sl4"];
-
-		return { carouselSlides };
-	},
+	setup() {},
 };
 </script>

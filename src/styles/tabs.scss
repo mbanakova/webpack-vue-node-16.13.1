@@ -20,13 +20,16 @@
 	cursor: pointer;
 	transition: $tr;
 
-	&.selected {
+	&.active {
 		background-color: $dark;
 	}
 }
 
-.tab__content {
+.tabs__content {
 	border: 2px solid $medium;
 	padding: 20px;
 	text-align: center;
+	list-style: none;
+	margin: 0;
+	padding: 10px;
 }

@@ -1,6 +1,5 @@
 <template>
 	<div class="">
-		<pre>{{ slides }}</pre>
 		<swiper :navigation="true" :pagination="true" :modules="modules" class="mySwiper">
 			<swiper-slide v-for="slide in slides" :key="slide.name"
 				>{{ slide.name }}

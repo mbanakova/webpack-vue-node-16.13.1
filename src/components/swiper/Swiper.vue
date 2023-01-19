@@ -9,7 +9,7 @@
 		</swiper>
 	</div>
 </template>
-<script>
+<script setup>
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
@@ -18,18 +18,8 @@ import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation, Pagination } from "swiper";
 import { useSlidesStore } from "./../../pinia/slidesStore";
 
-export default {
-	components: {
-		Swiper,
-		SwiperSlide,
-	},
-	setup() {
-		const slidesStore = useSlidesStore();
+const slidesStore = useSlidesStore();
 
-		return {
-			modules: [Navigation, Pagination],
-			slides: slidesStore.slides,
-		};
-	},
-};
+const modules = [Navigation, Pagination];
+const slides = slidesStore.slides;
 </script>

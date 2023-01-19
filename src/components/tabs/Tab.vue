@@ -4,16 +4,11 @@
 	</div>
 </template>
 
-<script>
-import { inject } from "vue";
+<script setup>
+import { defineProps, inject } from "vue";
 
-export default {
-	props: ["title"],
-
-	setup() {
-		const selectedTitle = inject("selectedTitle");
-
-		return { selectedTitle };
-	},
-};
+const props = defineProps({
+	title: String,
+});
+const selectedTitle = inject("selectedTitle");
 </script>

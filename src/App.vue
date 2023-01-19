@@ -35,6 +35,6 @@ import Swiper from "./components/swiper/Swiper.vue";
 import { useMenuStore } from "./pinia/menuStore";
 
 const store = useMenuStore();
-store.checkScreenWidth();
+store.checkScreenWidth(); // контролирует бургер-меню и body-scroll-lock при открытом меню
 window.addEventListener("resize", store.checkScreenWidth);
 </script>

@@ -29,6 +29,10 @@ export const useTabsStore = defineStore('tabsStore', {
       this.tabs.forEach(tab => tab.isActive = false)
       let activeTab = this.tabs.find(tab => tab.id === id)
       activeTab.isActive = true;
+    },
+    getActiveTab() {
+      let activeTab = this.tabs.find(tab => tab.isActive === true)
+      return activeTab.content
     }
   }
 })

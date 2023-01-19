@@ -6,9 +6,9 @@
 				{{ tab.title }}
 			</li>
 		</ul>
-		<ul class="tabs__content">
-			<li v-for="tab in tabs" :key="tab.title" v-show="tab.isActive">{{ tab.content }}</li>
-		</ul>
+		<div class="tabs__content" v-auto-animate>
+			<div>{{ store.getActiveTab() }}</div>
+		</div>
 	</div>
 </template>
 

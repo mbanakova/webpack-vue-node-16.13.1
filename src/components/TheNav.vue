@@ -2,7 +2,7 @@
 	<nav class="nav" :class="{ open: menuOpen }">
 		<ul class="nav__list">
 			<li>
-				<a class="nav__link" href="#slider" v-smooth-scroll @click="toggleHamburger">Scroll to slider</a>
+				<a class="nav__link" href="#swiper" v-smooth-scroll @click="toggleHamburger">Scroll to slider</a>
 			</li>
 			<li>
 				<a class="nav__link" href="#accordion" v-smooth-scroll @click="toggleHamburger">Scroll to accordion</a>

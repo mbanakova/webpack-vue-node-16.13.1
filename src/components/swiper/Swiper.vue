@@ -1,10 +1,13 @@
 <template>
-	<swiper :navigation="true" :pagination="true" :modules="modules" class="mySwiper">
-		<swiper-slide v-for="slide in slides" :key="slide.name"
-			>{{ slide.name }}
-			<!-- <img :src="require(`./../../img/${slide.img}`)" alt="" /> -->
-		</swiper-slide>
-	</swiper>
+	<div class="">
+		<pre>{{ slides }}</pre>
+		<swiper :navigation="true" :pagination="true" :modules="modules" class="mySwiper">
+			<swiper-slide v-for="slide in slides" :key="slide.name"
+				>{{ slide.name }}
+				<img :src="require(`./../../img/${slide.img}`)" alt="" />
+			</swiper-slide>
+		</swiper>
+	</div>
 </template>
 <script>
 import "swiper/css";
@@ -13,9 +16,7 @@ import "swiper/css/navigation";
 
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation, Pagination } from "swiper";
-
-import { useStore } from "vuex";
-import { computed } from "vue";
+import { useSlidesStore } from "./../../pinia/slidesStore";
 
 export default {
 	components: {
@@ -23,11 +24,11 @@ export default {
 		SwiperSlide,
 	},
 	setup() {
-		const store = useStore();
+		const slidesStore = useSlidesStore();
 
 		return {
 			modules: [Navigation, Pagination],
-			slides: computed(() => store.getters.getSlides),
+			slides: slidesStore.slides,
 		};
 	},
 };

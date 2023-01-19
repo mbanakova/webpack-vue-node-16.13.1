@@ -1,8 +1,8 @@
 import './styles/_style.scss'
 import VueSmoothScroll from 'vue3-smooth-scroll'
 import { createApp } from 'vue';
-import store from './store'
 import { createPinia } from 'pinia'
+import { autoAnimatePlugin } from '@formkit/auto-animate/vue'
 import App from './App.vue';
 const app = createApp(App)
 const pinia = createPinia()
@@ -11,6 +11,6 @@ app.use(VueSmoothScroll, {
   offset: -30,
   updateHistory: false
 })
-app.use(store)
 app.use(pinia)
+app.use(autoAnimatePlugin)
 app.mount('#app') 

@@ -24,23 +24,17 @@
 		</section>
 	</main>
 </template>
-<script>
+
+<script setup>
 import TheHeader from "./components/TheHeader.vue";
 import Tab from "./components/tabs/Tab.vue";
 import TabsWrapper from "./components/tabs/TabsWrapper.vue";
 import TheSVGSprite from "./components/TheSVGSprite.vue";
 import TheAccordion from "./components/accordion/TheAccordion.vue";
 import Swiper from "./components/swiper/Swiper.vue";
+import { useMenuStore } from "./pinia/menuStore";
 
-export default {
-	components: {
-		TheHeader,
-		Tab,
-		TabsWrapper,
-		TheSVGSprite,
-		TheAccordion,
-		Swiper,
-	},
-	setup() {},
-};
+const store = useMenuStore();
+store.checkScreenWidth();
+window.addEventListener("resize", store.checkScreenWidth);
 </script>

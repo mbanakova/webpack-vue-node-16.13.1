@@ -39,9 +39,9 @@
 		"webpack-dev-server": "4.11.1"
 	},
 	"dependencies": {
+		"@formkit/auto-animate": "^1.0.0-beta.5",
 		"pinia": "^2.0.29",
 		"swiper": "^8.4.5",
-		"vue": "3.2.45",
-		"vuex": "^4.0.2"
+		"vue": "3.2.45"
 	}
 }

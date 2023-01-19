@@ -29,7 +29,7 @@ body {
 	overflow-y: scroll;
 
 	@media (max-width: $mobile) {
-		&.no-scroll {
+		&.scroll-lock {
 			overflow: hidden;
 		}
 	}

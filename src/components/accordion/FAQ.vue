@@ -1,5 +1,5 @@
 <template>
-	<li class="faq" :class="{ open: faq.open }">
+	<li v-auto-animate class="faq" :class="{ open: faq.open }">
 		<div class="question">{{ faq.question }}</div>
 		<div class="answer">{{ faq.answer }}</div>
 	</li>
@@ -11,3 +11,4 @@ export default {
 	props: ["faq", "i", "open"],
 };
 </script>
+ 

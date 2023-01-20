@@ -13,7 +13,7 @@
 </template>
 
 <script setup>
-import { useTabsStore } from "./../../pinia/tabsStore";
+import { useTabsStore } from "./../pinia/tabsStore";
 const store = useTabsStore();
 const tabs = store.tabs;
 </script>

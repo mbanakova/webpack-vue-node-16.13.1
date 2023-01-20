@@ -44,6 +44,7 @@ img {
 main {
 	flex-grow: 1;
 	padding-top: 60px;
+	position: relative;
 
 	@media (max-width: $mobile) {
 		padding-top: 52px;

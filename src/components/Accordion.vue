@@ -9,7 +9,7 @@
 </template>
 
 <script setup>
-import { useAccordionStore } from "./../../pinia/accordionStore";
+import { useAccordionStore } from "./../pinia/accordionStore";
 const store = useAccordionStore();
 const accordion = store.accordion;
 </script>

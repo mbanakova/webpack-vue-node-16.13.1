@@ -15,7 +15,7 @@ import "swiper/css/navigation";
 
 import { Swiper, SwiperSlide } from "swiper/vue";
 import { Navigation, Pagination } from "swiper";
-import { useSlidesStore } from "./../../pinia/slidesStore";
+import { useSlidesStore } from "./../pinia/slidesStore";
 
 const slidesStore = useSlidesStore();
 

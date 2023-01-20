@@ -1,5 +1,5 @@
 <template>
-	<header class="header">
+	<header class="header" id="header">
 		<div class="container header__container">
 			<a class="nav__logo">Any logo</a>
 			<button v-if="store.isMobile" class="hamburger" @click="store.toggleMenu()" :class="{ 'is-active': store.menuOpen }">

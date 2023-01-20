@@ -12,20 +12,22 @@
 		</section>
 
 		<section id="accordion">
-			<TheAccordion />
+			<Accordion />
 		</section>
 		<section id="tabs">
 			<Tabs />
 		</section>
+		<GoToPageTop />
 	</main>
 </template>
 
 <script setup>
 import TheHeader from "./components/TheHeader.vue";
-import Tabs from "./components/tabs/Tabs.vue";
+import Tabs from "./components/Tabs.vue";
 import TheSVGSprite from "./components/TheSVGSprite.vue";
-import TheAccordion from "./components/accordion/TheAccordion.vue";
-import Swiper from "./components/swiper/Swiper.vue";
+import Accordion from "./components/Accordion.vue";
+import Swiper from "./components/Swiper.vue";
+import GoToPageTop from "./components/GoToPageTop.vue";
 import { useMenuStore } from "./pinia/menuStore";
 
 const store = useMenuStore();

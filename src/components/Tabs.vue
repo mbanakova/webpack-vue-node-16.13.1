@@ -2,7 +2,13 @@
 	<div class="tabs">
 		<pre>tabs: {{ tabs }}</pre>
 		<ul class="tabs__header">
-			<li class="tabs__title" v-for="tab in tabs" :key="tab.id" @click="store.selectTab(tab.id)" :class="{ active: tab.isActive }">
+			<li
+				class="tabs__title"
+				v-for="tab in tabs"
+				:key="tab.id"
+				@click="store.selectTab(tab.id)"
+				:class="{ active: tab.isActive }"
+			>
 				{{ tab.title }}
 			</li>
 		</ul>

@@ -1,20 +1,20 @@
 <template>
-	<svg fill="currentColor" v-on="$listeners">
+	<svg fill="currentColor">
 		<use :xlink:href="iconName" />
 	</svg>
 </template>
 
 <script setup>
-import { defineProps, computed } from "vue";
+import {computed} from 'vue'
 
 const props = defineProps({
 	name: {
 		type: String,
 		required: true,
 	},
-});
+})
 
 const iconName = computed(() => {
-	return `#icon-${props.name}`;
-});
+	return `#icon-${props.name}`
+})
 </script>  

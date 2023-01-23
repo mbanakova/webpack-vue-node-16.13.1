@@ -1,11 +1,13 @@
 <template>
 	<picture>
 		<source
+			v-if="isMobile"
 			type="image/webp"
 			media="(max-width: 767px)"
 			:srcset="require(`./../img/${name}-mob.webp`)"
 		/>
 		<source
+			v-if="isMobile"
 			media="(max-width: 767px)"
 			:srcset="require(`./../img/${name}-mob.jpg?png`)"
 		/>
@@ -23,7 +25,7 @@
 </template>
 
 <script setup>
-import { computed } from "vue";
+import {computed} from 'vue'
 
 const props = defineProps({
 	name: {
@@ -34,12 +36,16 @@ const props = defineProps({
 		type: String,
 		required: true,
 	},
-});
+	isMobile: {
+		type: Boolean,
+		required: false,
+	},
+})
 const imgName = computed(() => {
-	return `${props.name}`;
-});
+	return `${props.name}`
+})
 
 const imgAlt = computed(() => {
-	return `${props.alt}`;
-});
+	return `${props.alt}`
+})
 </script>  

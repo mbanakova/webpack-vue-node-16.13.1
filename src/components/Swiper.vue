@@ -1,9 +1,14 @@
 <template>
 	<div class="">
-		<swiper :navigation="true" :pagination="true" :modules="modules" class="mySwiper">
+		<swiper
+			:navigation="true"
+			:pagination="true"
+			:modules="modules"
+			class="mySwiper"
+		>
 			<swiper-slide v-for="slide in slides" :key="slide.name"
 				>{{ slide.name }}
-				<!-- <img :src="require(`./../../img/${slide.img}`)" alt="" /> -->
+				<img :src="require(`./../img/${slide.img}`)" alt="" />
 			</swiper-slide>
 		</swiper>
 	</div>

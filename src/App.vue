@@ -3,11 +3,9 @@
 	<TheHeader />
 	<main class="container">
 		<section id="hero">
-			<h1>Это песец</h1>
-			<img src="./img/pesec.jpg" alt="" width="400" />
+			<!-- <img src="./img/pesec.jpg" alt="" width="340" /> -->
+			<Picture name="pic" alt="test" />
 			<svg-icon name="fire" />
-			<svg-icon name="stones" /> svg лежат в Sprite.vue, он подключён в html,
-			так что можно вставлять в любой компонент без импорта
 		</section>
 		<section id="swiper">
 			<Swiper />
@@ -26,6 +24,7 @@
 <script setup>
 import TheHeader from "./components/TheHeader.vue";
 import Tabs from "./components/Tabs.vue";
+import Picture from "./components/Picture.vue";
 import Sprite from "./components/Sprite.vue"; // добавить ручками тег symbol и задать id (формат "icon-id")
 import Accordion from "./components/Accordion.vue";
 import Swiper from "./components/Swiper.vue";

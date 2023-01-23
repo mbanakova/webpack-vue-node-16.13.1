@@ -3,19 +3,18 @@
 		<use :xlink:href="iconName" />
 	</svg>
 </template>
-<script>
-export default {
-	name: "SvgIcon",
-	props: {
-		name: {
-			type: String,
-			required: true,
-		},
+
+<script setup>
+import { defineProps, computed } from "vue";
+
+const props = defineProps({
+	name: {
+		type: String,
+		required: true,
 	},
-	computed: {
-		iconName() {
-			return `#icon-${this.name}`;
-		},
-	},
-};
+});
+
+const iconName = computed(() => {
+	return `#icon-${props.name}`;
+});
 </script>  

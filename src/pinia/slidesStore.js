@@ -6,11 +6,11 @@ export const useSlidesStore = defineStore('slidesStore', {
     slides: [
       {
         name: "Slide 1",
-        img: "sl1",
+        img: "pic",
       },
       {
         name: "Slide 2",
-        img: "sl2",
+        img: "pic",
       },
     ]
   })

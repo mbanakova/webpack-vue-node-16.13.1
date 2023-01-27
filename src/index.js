@@ -5,7 +5,6 @@ import { createPinia } from 'pinia'
 import { autoAnimatePlugin } from '@formkit/auto-animate/vue'
 import App from './App.vue';
 import SvgIcon from './components/SvgIcon.vue'
-import './assets/img/svg/fire.svg' // icon
 const app = createApp(App)
 const pinia = createPinia()
 app.use(VueSmoothScroll, {

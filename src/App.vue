@@ -7,7 +7,6 @@
 			Про картинки подробнее в .Readme.md <br />
 			<Picture name="pic" type="jpg" alt="test" :isMobile="true"></Picture>
 			icon-fire.svg <svg-icon name="fire" />
-			<Picture name="fish" type="png" alt="test" :isMobile="false"></Picture>
 		</section>
 		<section id="swiper">
 			<Swiper />

@@ -13,9 +13,6 @@
   border-radius: 6px;
   transition: $tr;
   outline: none;
+  border: none;
   cursor: pointer;
-
-  &:hover {
-    background-color: $bright;
-  }
 }

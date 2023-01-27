@@ -1,21 +1,21 @@
 .go-up {
-	width: 30px;
-	height: 30px;
-	background-color: $dark;
-	position: fixed;
-	right: 20px;
-	bottom: 20px;
-	background-image: url("../img/svg/arrow.svg");
-	background-position: center;
-	background-size: contain;
-	background-repeat: no-repeat;
-	transform: rotate(180deg);
-	border-radius: 6px;
-	transition: $tr;
-	outline: none;
-	cursor: pointer;
+  width: 30px;
+  height: 30px;
+  background-color: $dark;
+  position: fixed;
+  right: 20px;
+  bottom: 20px;
+  background-image: url('../assets/img/svg/arrow.svg');
+  background-position: center;
+  background-size: contain;
+  background-repeat: no-repeat;
+  transform: rotate(180deg);
+  border-radius: 6px;
+  transition: $tr;
+  outline: none;
+  cursor: pointer;
 
-	&:hover {
-		background-color: $bright;
-	}
+  &:hover {
+    background-color: $bright;
+  }
 }

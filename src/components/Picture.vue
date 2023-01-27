@@ -4,23 +4,27 @@
 			v-if="isMobile"
 			type="image/webp"
 			media="(max-width: 767px)"
-			:srcset="require(`./../img/${name}-mob.webp`)"
+			:srcset="require(`./../assets/img/webp/${name}-mob.webp`)"
 		/>
 		<source
 			v-if="isMobile"
 			media="(max-width: 767px)"
-			:srcset="require(`./../img/${name}-mob.jpg?png`)"
+			:srcset="require(`./../assets/img/${name}-mob.${type}`)"
 		/>
 		<source
 			type="image/webp"
 			media="(min-width: 1px)"
-			:srcset="require(`./../img/${name}.webp`)"
+			:srcset="require(`./../assets/img/webp/${name}.webp`)"
 		/>
 		<source
 			media="(min-width: 768px)"
-			:srcset="require(`./../img/${name}.jpg?png`)"
+			:srcset="require(`./../assets/img/${name}.${type}`)"
 		/>
-		<img width="400" :src="require(`./../img/${name}.jpg`)" :alt="imgAlt" />
+		<img
+			width="400"
+			:src="require(`./../assets/img/${name}.${type}`)"
+			:alt="imgAlt"
+		/>
 	</picture>
 </template>
 
@@ -29,6 +33,10 @@ import {computed} from 'vue'
 
 const props = defineProps({
 	name: {
+		type: String,
+		required: true,
+	},
+	type: {
 		type: String,
 		required: true,
 	},

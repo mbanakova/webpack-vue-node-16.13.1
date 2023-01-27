@@ -12,6 +12,7 @@
 					:name="slide.img"
 					:alt="slide.name"
 					:isMobile="false"
+					type="jpg"
 				></Picture>
 			</swiper-slide>
 		</swiper>

@@ -17,12 +17,12 @@ module.exports = {
       .set('components', resolve('src/components'))
     config.module
       .rule('svg')
-      .exclude.add(resolve('src/img/svg'))
+      .exclude.add(resolve('src/assets/img/svg'))
       .end();
     config.module
       .rule('icons')
       .test(/\.svg$/)
-      .include.add(resolve('src/img/svg'))
+      .include.add(resolve('src/assets/img/svg'))
       .end()
       .use('svg-sprite-loader')
       .loader('svg-sprite-loader')
